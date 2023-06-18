@@ -18,9 +18,14 @@ echo "Aplicativo para procesar un lote de imagenes"
 	  elif [ "$entrada" == "1" ]; then 
 		 echo "Generando imagenes..."
 		 break 
-	  elif [ "$entrada" == "2" ]; then 
-		 echo "Descargando imagenes..."
-		 break
+	  elif [ "$entrada" == "2" ]; then
+		 echo "Ingrese la ruta del archivo comprimido de imágenes: "
+   		 read ruta_imagenes
+
+    		 echo "Ingrese la ruta del archivo de suma de verificación: "
+   		 read ruta_suma_verificacion
+		 ./descargar.sh "$ruta_imagenes" "$ruta_suma_verificacion" 
+
 	  elif [ "$entrada" == "3" ]; then 
 		 echo "Recortando imagenes..."
 		 break
