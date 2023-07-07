@@ -6,7 +6,7 @@ echo "Aplicativo para procesar un lote de imagenes"
 	do
 	 echo "Por favor ingrese un numero (0-4): "
 	 echo "1- Generar imagenes utilizando un servicio web."
-	 echo "2- Descargar un archivo comprimido de imagenes."
+	 echo "2- Descomprimir un archivo de comprimido con imagenes."
 	 echo "3- Recortar imagenes"
 	 echo "4- Generar lista de todas personas"
 	 echo "0- Salir"
@@ -18,9 +18,13 @@ echo "Aplicativo para procesar un lote de imagenes"
 	  elif [ "$entrada" == "1" ]; then 
 		 echo "Generando imagenes..."
 		 break 
-	  elif [ "$entrada" == "2" ]; then 
-		 echo "Descargando imagenes..."
-		 break
+	  elif [ "$entrada" == "2" ]; then
+		 echo "Ingrese la ruta del archivo comprimido de imágenes: "
+   		 read ruta_imagenes
+
+    		 echo "Ingrese la ruta del archivo de suma de verificación: "
+   		 read ruta_suma_verificacion
+		 ./descomprimir.sh "$ruta_imagenes" "$ruta_suma_verificacion" 
 	  elif [ "$entrada" == "3" ]; then 
 		 echo "Recortando imagenes..."
 		 break
